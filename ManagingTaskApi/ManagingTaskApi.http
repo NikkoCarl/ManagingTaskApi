@@ -1,6 +1,60 @@
-@ManagingTaskApi_HostAddress = http://localhost:5057
 
-GET {{ManagingTaskApi_HostAddress}}/weatherforecast/
-Accept: application/json
+POST http://localhost:5057/api/auth/login
+X-API-KEY: KEY-ADMIN-APRIL
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "1234"
+}
 
 ###
+
+GET http://localhost:5057/api/tasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc3Njk0NTg1MCwiaXNzIjoiVGFza01hbmFnZW1lbnRBcGkiLCJhdWQiOiJUYXNrTWFuYWdlbWVudEFwaVVzZXJzIn0.xkFAsBDRCniEunH_8G3qjaoR5TXXB41pEAMQpy-0ShE
+
+###
+
+POST http://localhost:5057/api/tasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc3Njk0NTg1MCwiaXNzIjoiVGFza01hbmFnZW1lbnRBcGkiLCJhdWQiOiJUYXNrTWFuYWdlbWVudEFwaVVzZXJzIn0.xkFAsBDRCniEunH_8G3qjaoR5TXXB41pEAMQpy-0ShE
+Content-Type: application/json
+
+{
+  "title": "Admin Task",
+  "isCompleted": false
+}
+
+###
+
+PUT http://localhost:5057/api/tasks/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc3Njk0NTg1MCwiaXNzIjoiVGFza01hbmFnZW1lbnRBcGkiLCJhdWQiOiJUYXNrTWFuYWdlbWVudEFwaVVzZXJzIn0.xkFAsBDRCniEunH_8G3qjaoR5TXXB41pEAMQpy-0ShE
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Updated by Admin",
+  "isCompleted": true
+}
+
+###
+
+DELETE http://localhost:5057/api/tasks/1
+Authorization: Bearer eyeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc3Njk0NTg1MCwiaXNzIjoiVGFza01hbmFnZW1lbnRBcGkiLCJhdWQiOiJUYXNrTWFuYWdlbWVudEFwaVVzZXJzIn0.xkFAsBDRCniEunH_8G3qjaoR5TXXB41pEAMQpy-0ShE
+
+###
+
+POST http://localhost:5057/api/auth/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "Yh4lPyfWPb7p0zb2kPWdF1F/P+uIeG36/PTTpj57IHIihHV4otCqnw1oUKxGZCSRrojkh3cD9MXbIwDyNVOjjA=="
+}
+
+###
+
+POST http://localhost:5057/api/auth/logout
+Content-Type: application/json
+
+{
+  "refreshToken": "Yh4lPyfWPb7p0zb2kPWdF1F/P+uIeG36/PTTpj57IHIihHV4otCqnw1oUKxGZCSRrojkh3cD9MXbIwDyNVOjjA=="
+}

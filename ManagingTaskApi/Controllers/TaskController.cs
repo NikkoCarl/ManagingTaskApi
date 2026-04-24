@@ -11,7 +11,7 @@ namespace ManagingTaskApi.Controllers;
 [Route("api/tasks")]
 [Authorize]
 [EnableRateLimiting("taskPolicy")]
-public class TasksController : ControllerBase
+public class TaskssController : ControllerBase
 {
     [HttpGet]
     [Authorize(Roles = "Admin,User")]

@@ -11,12 +11,12 @@ namespace ManagingTaskApi.Controllers;
 
 [ApiController]
 [Route("api/auth")]
-public class AuthController : ControllerBase
+public class AuthsController : ControllerBase
 {
     private readonly TokenService _tokenService;
     private readonly LoginLogger _loginLogger;
 
-    public AuthController(TokenService tokenService, LoginLogger loginLogger)
+    public AuthsController(TokenService tokenService, LoginLogger loginLogger)
     {
         _tokenService = tokenService;
         _loginLogger = loginLogger;
